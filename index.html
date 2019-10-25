@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>TODO List</title>
+        <link href="https://fonts.googleapis.com/css?family=Permanent+Marker&display=swap" rel="stylesheet">
+
+        <!-- This is our css file -->
+        <link href="styles.css" rel="stylesheet" type="text/css">
+    </head>
+    <body>
+
+        <!-- This is the task we want to add to our task board -->
+        <form id="postit">
+            <input type="text" id="new-task"><br>
+            <input type="submit" value="Paste post it on task board!">
+        </form>
+
+        <!-- This is where we display all the tasks on our task board -->
+        <div id="taskboard"></div>
+
+        <script src="https://www.gstatic.com/firebasejs/7.2.1/firebase-app.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/7.2.1/firebase-firestore.js"></script>
+        <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+
+        <!-- This is our javascript file-->
+        <script src="index.js"></script>
+    </body>
+</html>
