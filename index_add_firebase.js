@@ -1,19 +1,19 @@
-//// Firebase config
-//var firebaseConfig = {
-//    apiKey: "",
-//    authDomain: "",
-//    databaseURL: "",
-//    projectId: "",
-//    storageBucket: "",
-//    messagingSenderId: "",
-//    appId: ""
-//};
-//
-//// Initialize Firebase
-//firebase.initializeApp(firebaseConfig);
-//
-//// Connect to Firestore, which is our noSQL DB
-//var db = firebase.firestore();
+// Firebase config
+var firebaseConfig = {
+    apiKey: "",
+    authDomain: "",
+    databaseURL: "",
+    projectId: "",
+    storageBucket: "",
+    messagingSenderId: "",
+    appId: ""
+};
+
+// Initialize Firebase
+firebase.initializeApp(firebaseConfig);
+
+// Connect to Firestore, which is our noSQL DB
+var db = firebase.firestore();
 
 // This chunk of code will run when you press the submit button
 $("#postit").submit(function(e) {
@@ -41,19 +41,20 @@ $("#postit").submit(function(e) {
         // Place the post-it on the task board
         document.getElementById("taskboard").appendChild(new_postit);
     };
+    addNewItem(postit_text);
 
-//    // Save new task to database
-//    function saveItemToDatabase(postit_text){
-//        doc = (db.collection("tasks")
-//
-//               // Save new task to database
-//               .add({mytask: postit_text})
+    // Save new task to database
+    function saveItemToDatabase(postit_text){
+        doc = (db.collection("tasks")
+
+               // Save new task to database
+               .add({mytask: postit_text}))
 //
 //               // Then get the information sent to database
 //               .then(function(docRef){docRef.get()
 //
 //                    // Extract text and display on task board
 //                    .then(function(doc){addNewItem(doc.data()['mytask']);})}))
-//    };
-//    saveItemToDatabase(postit_text);
+    };
+    saveItemToDatabase(postit_text);
 });
